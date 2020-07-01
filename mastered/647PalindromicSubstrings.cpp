@@ -1,3 +1,4 @@
+//x
 //Manacher's Algorithm
 class Solution {
 public:
@@ -25,6 +26,7 @@ public:
         for(int i = 0; i < t.size(); ++i){
             if(i <= rb){
                 // If i is within right bound, radius is min of(radius of index reflection at center or distance from i to right bound)
+                // min because p[2 * c - 1] can be greater than rb - i by having a palindrome beyond leftbond 
                 rad = min(p[2 * c - i], rb - i); 
             }else{
                 rad = 0; //reset radius to calculate it later. 
@@ -50,6 +52,7 @@ public:
         for(int n : p){
             // need to add 1 divide by two because the original string was modifed to two
             //  times its original length. 
+            // n + 1 so we always round up. So #a#a# has radius 2, (2 + 1)/2 = 1. #a#b#a# has radius 3, (3 + 1)/2 = 2. This way we count even and odd number palindroms properly. 
             ans += (n + 1) / 2; 
         }
         
