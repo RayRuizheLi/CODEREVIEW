@@ -26,6 +26,9 @@ public:
             
             //cout << "finish down" << endl;
             
+            //Reasons for the if statements. Depending on row size is even or
+            //  odd, etc, the last two loops may be skipped. 
+
             if(rowStart != rowEnd - 1){
                 for(int i = colEnd - 2; i >= colStart; --i){
                     //cout << matrix[rowEnd - 1][i] << endl;
